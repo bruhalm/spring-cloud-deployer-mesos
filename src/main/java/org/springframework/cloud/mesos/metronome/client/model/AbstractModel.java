@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 the original author or authors.
+ * Copyright 2019 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
-package org.springframework.cloud.mesos.chronos.client.model;
+package org.springframework.cloud.mesos.metronome.client.model;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 /**
- * Class defining a Docker {@link Job} to be used with Chronos.
+ * Abstract class defining common behavior for Model classes.
  *
- * @author Thomas Risberg
+ * @author Bruh Alemneh
  */
-public class DockerJob extends Job {
+public abstract class AbstractModel {
 
-	DockerContainer container;
+	public static final Gson GSON =
+			new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
-	public DockerContainer getContainer() {
-		return container;
+	@Override
+	public String toString() {
+		return GSON.toJson(this);
 	}
 
-	public void setContainer(DockerContainer container) {
-		this.container = container;
-	}
 }

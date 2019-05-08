@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-17 the original author or authors.
+ * Copyright 2019 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.cloud.deployer.spi.mesos.chronos;
+package org.springframework.cloud.deployer.spi.mesos.metronome;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,19 +23,19 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.deployer.spi.mesos.constraints.Constraint;
 
 /**
- * Configuration properties for interacting with a Chronos service.
+ * Configuration properties for interacting with a Metronome service.
  *
- * @author Thomas Risberg
+ * @author Bruh Alemneh
  */
-@ConfigurationProperties(ChronosTaskLauncherProperties.PREFIX)
-public class ChronosTaskLauncherProperties {
+@ConfigurationProperties(MetronomeTaskLauncherProperties.PREFIX)
+public class MetronomeTaskLauncherProperties {
 
-	/*default*/ static final String PREFIX = "spring.cloud.deployer.mesos.chronos";
+	/*default*/ static final String PREFIX = "spring.cloud.deployer.mesos.metronome";
 
 	/**
-	 * The location of the Chronos REST endpoint.
+	 * The location of the Metronome REST endpoint.
 	 */
-	private String apiEndpoint = "http://m1.dcos/service/chronos";
+	private String apiEndpoint = "http://m1.dcos/service/metronome";
 
 	/**
 	 * URIs for artifacts to be downloaded when the task is started.

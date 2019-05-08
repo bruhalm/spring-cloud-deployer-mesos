@@ -36,13 +36,13 @@ import org.springframework.core.io.Resource;
  * @author Thomas Risberg
  */
 @SpringBootTest(classes = {TestConfig.class, MesosAutoConfiguration.class})
-public class ChronosTaskLauncherIntegrationTests extends AbstractTaskLauncherIntegrationTests{
+public class MetronomeTaskLauncherIntegrationTests extends AbstractTaskLauncherIntegrationTests{
 
 	@Autowired
 	TaskLauncher taskLauncher;
 
 	@ClassRule
-	public static ChronosTestSupport chronosAvailable = new ChronosTestSupport();
+	public static MetronomeTestSupport chronosAvailable = new MetronomeTestSupport();
 
 	@Override
 	protected TaskLauncher provideTaskLauncher() {

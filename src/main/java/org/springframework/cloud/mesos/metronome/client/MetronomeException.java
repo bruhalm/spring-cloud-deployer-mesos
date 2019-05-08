@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.springframework.cloud.mesos.chronos.client;
+package org.springframework.cloud.mesos.metronome.client;
 
 /**
  * Chronos Exception
@@ -23,12 +23,12 @@ package org.springframework.cloud.mesos.chronos.client;
  *
  * @author Thomas Risberg
  */
-public class ChronosException extends Exception {
+public class MetronomeException extends Exception {
 	private static final long serialVersionUID = 1L;
 	private int status;
 	private String message;
 
-	public ChronosException(int status, String message) {
+	public MetronomeException(int status, String message) {
 		this.status = status;
 		this.message = message;
 	}
